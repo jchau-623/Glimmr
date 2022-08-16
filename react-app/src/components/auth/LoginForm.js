@@ -63,7 +63,7 @@ const LoginForm = () => {
         <span className='login-logo'>Log in to Glimmr</span>
         <form onSubmit={isDisplayedEmailField ? handleClickNext : onLogin} className='login-form'>
           <div className='login-wrapper'>
-            <div>
+            <div className='login-input-container'>
               {isDisplayedEmailField ?
                 (
                   <input
@@ -77,7 +77,7 @@ const LoginForm = () => {
                 ) :
 
                 (
-                  <div>
+                  <div className='login-input-container'>
                     <input
                       className='login-input'
                       name='password'
@@ -97,20 +97,18 @@ const LoginForm = () => {
             {isDisplayedEmailField ?
               (
                 <div className='login-wrapper'>
-                  <div className='login-next-btns'>
                     <div className='login-btns'>
                       <button className='login-next' type='submit'>Next</button>
                       <button className='login-next' onClick={demoLogin}>Demo User</button>
-                    </div>
                   </div>
-                    <div>
-                      <span className='login-learn-more'>Not a Glimmr member?</span>
+                    <div className='signup-login-text'>
+                      <span className='login-learn-more'>Not a Glimmr member? </span>
                       <NavLink to='/sign-up' className='signup-link'>Sign up here.</NavLink>
                     </div>
                 </div>
               ) : (
                 <div className='login-wrapper'>
-                  <span className='login-forgot'>Forgot Password?</span>
+                  {/* <span className='login-forgot'>Forgot Password?</span> */}
                   <div className='login-btns'>
                     <button className='login-next' type='submit'>Next</button>
                   </div>
