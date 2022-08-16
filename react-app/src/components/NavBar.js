@@ -9,7 +9,7 @@ const NavBar = () => {
       <ul>
         <li>
           <NavLink to='/' exact={true} activeClassName='active'>
-            Home
+            glimmr
           </NavLink>
         </li>
         <li>

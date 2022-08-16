@@ -18,7 +18,7 @@ function UsersList() {
       <li key={user.id}>
         <NavLink to={`/users/${user.id}`}>{user.username}</NavLink>
       </li>
-    );
+    );  
   });
 
   return (

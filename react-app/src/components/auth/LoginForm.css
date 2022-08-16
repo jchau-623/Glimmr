@@ -1,0 +1,23 @@
+.login-container {
+    display:flex;
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    height:80vh;
+}
+
+.login-border {
+    display: flex;
+    height: 250px;
+    width: 280px;
+    padding: 48px 40px 36px;
+    /* border: 1px solid #dadce0;
+    border-radius: 10px; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.error-handling-login {
+    color:#cc4539;
+    margin-top: 10px;
+}
