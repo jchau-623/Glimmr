@@ -1,0 +1,40 @@
+<!-- flask db migrate
+
+Creates migrations to the db
+
+flask db upgrade/downgrade
+
+runs the command in the migrations file you just created
+
+flask seed all
+
+Creating seed data in the db with the functions you created in the file
+
+
+
+frontend -> backend signup
+user inputs his information, and upon create submit sends the information to the React component state. Then the action handler grabs the state, parses into JSON to be read in the backend, then sent to the backend api route where the user is validated and created.
+ -->
+
+<!-- 8. Push your docker container to heroku from the root directory of your project.
+   (If you are using an M1 mac, follow [these steps below](#for-m1-mac-users) instead, then continue on to step 9.)
+   This will build the Dockerfile and push the image to your heroku container registry.
+
+   ```bash
+   heroku container:push web -a {NAME_OF_HEROKU_APP}
+   ```
+
+heroku container:login if you run into authentication required error
+
+9. Release your docker container to heroku
+
+      ```bash
+      heroku container:release web -a {NAME_OF_HEROKU_APP}
+      ```
+
+10. set up your database
+
+      ```bash
+      heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
+      heroku run -a {NAME_OF_HEROKU_APP} flask seed all
+      ``` -->

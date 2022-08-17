@@ -110,7 +110,7 @@ const LoginForm = () => {
                 <div className='login-wrapper'>
                   {/* <span className='login-forgot'>Forgot Password?</span> */}
                   <div className='login-btns'>
-                    <button className='login-next' type='submit'>Next</button>
+                    <button className='login-next' type='submit'>Sign in</button>
                   </div>
                 </div>
               )}

@@ -120,10 +120,12 @@ const SignUpForm = () => {
               </div>
             </div>
             <div className='login-text'>
+            </div>
+            <div className='sign-up-btn-container'>
+            <button className='sign-up-btn' type='submit'>Sign up</button>
+            </div>
             <span className='signup-learn-more'>Already a Glimmr member? </span>
             <NavLink to='/login' className='login-link'>Login in here.</NavLink>
-            </div>
-            <button className='next' type='submit'>Sign up</button>
           </div>
         </div>
       </form>
