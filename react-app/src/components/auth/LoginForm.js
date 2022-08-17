@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect, useHistory, NavLink } from 'react-router-dom';
 import { login, validateEmail } from '../../store/session';
+import loginSignupImage from "../../assets/LoginSignupImage.jpg"
 import './LoginForm.css'
 
 const LoginForm = () => {
@@ -58,7 +59,8 @@ const LoginForm = () => {
   }
 
   return (
-    <section className='login-container'>
+    <section className='login-container'
+    style={{ backgroundImage: `url(${loginSignupImage})` }}>
       <div className='login-border'>
         <span className='login-logo'>Log in to Glimmr</span>
         <form onSubmit={isDisplayedEmailField ? handleClickNext : onLogin} className='login-form'>
