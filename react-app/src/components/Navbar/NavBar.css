@@ -1,0 +1,35 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(22,22,24);
+    color: white;
+    height: 50px;
+    align-items: center;
+}
+
+.navbar-left {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-center {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flickr-dots {
+    height: 10px;
+    margin-right: 5px;
+    margin-top:14px;
+}
+
+.glimmr {
+    margin-bottom: 8px;
+}
+
+.nav-home-btn {
+    display: flex;
+    flex-direction: row;
+}

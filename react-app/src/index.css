@@ -4,3 +4,24 @@
     margin: 0;
     padding: 0;
 }
+
+ul {
+    list-style-type: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.nav-items > a {
+    color: white;
+}
+
+.signup-login-link > a {
+    color: #006dac;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
