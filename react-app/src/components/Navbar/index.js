@@ -5,6 +5,7 @@ import LogoutButton from '../auth/LogoutButton';
 import { useSelector } from "react-redux";
 import "./NavBar.css";
 import flickrLogo from '../../assets/flickrLogo.svg'
+// test
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state?.session?.user);
