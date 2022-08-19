@@ -7,16 +7,31 @@
     align-items: center;
 }
 
+.navbar a:hover {
+    color: lightgray;
+}
+
 .navbar-left {
-    margin-left: 100px;
+    margin-left: 150px;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: left;
 }
 
 .navbar-center {
     display:flex;
     justify-content: center;
     align-items: center;
+    margin-left: 250px;
+}
+
+.navbar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    margin-left: 350px;
 }
 
 .flickr-dots {
@@ -32,4 +47,12 @@
 .nav-home-btn {
     display: flex;
     flex-direction: row;
+}
+
+.nav-items {
+    margin: 0 25px;
+}
+
+.upload-button {
+    font-size: 25px;
 }
