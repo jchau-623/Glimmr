@@ -1,0 +1,12 @@
+.logout-btn {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    color: #212124;
+    background-color: transparent;
+    margin:5px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    cursor: pointer;
+}

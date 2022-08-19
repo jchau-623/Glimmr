@@ -5,7 +5,7 @@ import LogoutButton from '../auth/LogoutButton';
 import { useSelector } from "react-redux";
 import "./NavBar.css";
 import flickrLogo from '../../assets/flickrLogo.svg'
-// test
+import ProfileButton from './ProfileButton';
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state?.session?.user);
@@ -13,7 +13,7 @@ const NavBar = () => {
     <nav className="navbar">
         <div className="navbar-left">
             <NavLink
-                to="/photostream"
+                to="/"
                 className="nav-items"
             >
               <div className='nav-home-btn'>
@@ -92,9 +92,8 @@ const NavBar = () => {
                             </span>
                         </NavLink>
                     </div>
-
-                    <div className="nav-items">
-                        <LogoutButton sessionUser={sessionUser} />
+                    <div>
+                      <ProfileButton />
                     </div>
                 </>
             ) : (
