@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from '../auth/LogoutButton';
 import { useSelector } from "react-redux";
 import "./NavBar.css";
 import flickrLogo from '../../assets/flickrLogo.svg'

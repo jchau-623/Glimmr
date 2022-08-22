@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, useHistory } from 'react-router-dom';
-import * as sessionActions from '../../store/session';
+import { useSelector} from 'react-redux';
 import LogoutButton from '../auth/LogoutButton';
 import './ProfileButton.css';
 
