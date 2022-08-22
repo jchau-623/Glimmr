@@ -5,7 +5,12 @@
     align-items: center;
     text-align: center;
     margin-right:35px;
+    border-top: 1px solid #dadce0;
 }
+
+/* .prof-list-item:hover {
+    font-weight: bolder;
+} */
 
 .profile-dropdown{
     list-style-type: none;

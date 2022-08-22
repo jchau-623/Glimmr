@@ -10,3 +10,7 @@
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     cursor: pointer;
 }
+
+.logout-btn:hover {
+    font-weight: bold;
+}
