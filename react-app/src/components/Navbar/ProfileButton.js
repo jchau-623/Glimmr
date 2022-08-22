@@ -23,7 +23,7 @@ function ProfileButton() {
                     onClick={handleClick}></i>
             </div>
             {showDropdown &&
-                <ul className='profile-dropdown'>
+                <ul className='profile-dropdown'>Hello, {sessionUser.first_name} {sessionUser.last_name}
                     <li className='prof-list-item'>
                         <LogoutButton />
                     </li>
