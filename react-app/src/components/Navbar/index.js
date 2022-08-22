@@ -53,13 +53,6 @@ const NavBar = () => {
                 </a>
             </div>
             <div className="nav-items">
-                <a href="https://jchau-623.github.io/" target="_blank" rel="noreferrer">
-                    <span className="github-icon">
-                        <div>Portfolio</div>
-                    </span>
-                </a>
-            </div>
-            <div className="nav-items">
                 <a
                     href="https://www.linkedin.com/in/justin-chau-1123a9142/"
                     target="_blank"
@@ -67,6 +60,13 @@ const NavBar = () => {
                 >
                     <span className="linkedin-icon">
                         <i className="fab fa-linkedin"></i>
+                    </span>
+                </a>
+            </div>
+            <div className="nav-items">
+                <a href="https://jchau-623.github.io/" target="_blank" rel="noreferrer">
+                    <span className="github-icon">
+                        <div>Portfolio</div>
                     </span>
                 </a>
             </div>
