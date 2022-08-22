@@ -46,16 +46,16 @@ const NavBar = () => {
 
         <div className="navbar-center">
             <div className="nav-items">
-                <a href="https://jchau-623.github.io/" target="_blank" rel="noreferrer">
+                <a href="https://github.com/jchau-623" target="_blank" rel="noreferrer">
                     <span className="github-icon">
-                        <div>Portfolio</div>
+                        <i className="fab fa-github"></i>
                     </span>
                 </a>
             </div>
             <div className="nav-items">
-                <a href="https://github.com/jchau-623" target="_blank" rel="noreferrer">
+                <a href="https://jchau-623.github.io/" target="_blank" rel="noreferrer">
                     <span className="github-icon">
-                        <i className="fab fa-github"></i>
+                        <div>Portfolio</div>
                     </span>
                 </a>
             </div>
