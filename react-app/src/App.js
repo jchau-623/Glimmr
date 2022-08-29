@@ -8,12 +8,14 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
+import NewPhotoPage from './components/NewPhotoPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
   const user = useSelector(({ session }) => session.user);
+  const sessionUser = useSelector(state => state?.session?.user);
 
   useEffect(() => {
     (async() => {
@@ -45,6 +47,9 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute>
+        <Route path="/photos/:photoId/edit" exact={true}>
+                    <NewPhotoPage user={user} />
+                </Route>
       </Switch>
     </BrowserRouter>
   );
