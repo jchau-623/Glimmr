@@ -9,16 +9,17 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import NewPhotoPage from './components/NewPhotoPage';
+import PhotostreamPage from './components/PhotostreamPage';
+import ExplorePage from './components/ExplorePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
   const user = useSelector(({ session }) => session.user);
-  const sessionUser = useSelector(state => state?.session?.user);
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -30,7 +31,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    {user && <NavBar />}
+      {user && <NavBar />}
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />
@@ -39,7 +40,7 @@ function App() {
           <SignUpForm />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
@@ -47,9 +48,15 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute>
-        <Route path="/photos/:photoId/edit" exact={true}>
-                    <NewPhotoPage user={user} />
-                </Route>
+        <ProtectedRoute path="/photostream" exact={true}>
+          <PhotostreamPage/>
+        </ProtectedRoute>
+        <ProtectedRoute path="/explore" exact={true}>
+          <ExplorePage/>
+        </ProtectedRoute>
+        <ProtectedRoute path="/photos/new" exact={true}>
+          <NewPhotoPage/>
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
