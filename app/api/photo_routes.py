@@ -49,7 +49,6 @@ def post_photo():
 
 @photo_routes.route('/<int:photo_id>/edit', methods=['PATCH'])
 def patch_photo(photo_id):
-    print('1111111111')
     current_user_id = current_user.get_id()
     # current_user_id = 1
     form = PhotoForm()
