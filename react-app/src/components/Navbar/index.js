@@ -1,5 +1,5 @@
 
-import React from 'react';
+import { React, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import "./NavBar.css";
@@ -8,6 +8,20 @@ import ProfileButton from './ProfileButton';
 
 const NavBar = () => {
     const sessionUser = useSelector(state => state?.session?.user);
+
+    const [showAboutMe, setShowAboutMe] = useState(false)
+
+    useEffect(() => {
+        if (!showAboutMe) return
+        const closeDropdown = (e) => {
+            setShowAboutMe(false);
+        }
+
+        document.addEventListener('click', closeDropdown);
+
+        return () => document.removeEventListener('click', closeDropdown);
+    }, [showAboutMe]);
+
     return (
         <nav className="navbar">
             <div className="navbar-left">
@@ -44,7 +58,7 @@ const NavBar = () => {
                 )}
             </div>
 
-            <div className="navbar-center">
+            {/* <div className="navbar-center">
                 <div className="nav-items">
                     <a href="https://github.com/jchau-623" target="_blank" rel="noreferrer">
                         <span className="github-icon">
@@ -70,13 +84,37 @@ const NavBar = () => {
                         </span>
                     </a>
                 </div>
-            </div>
-            <div className="nav-items">
-                <a href="https://jchau-623.github.io/" target="_blank" rel="noreferrer">
-                    <span className="github-icon">
-                        <div>Portfolio</div>
-                    </span>
-                </a>
+            </div> */}
+            <div className="navbar-center">
+                <div className='about-me-dropdown' onClick={setShowAboutMe}>About Me</div>
+                {showAboutMe && (
+                    <ul className="nav-items">
+                        <a href="https://github.com/jchau-623" target="_blank" rel="noreferrer">
+                            <span className="github-icon">
+                                <i className="fab fa-github"></i>
+                            </span>
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/justin-chau-1123a9142/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <span className="linkedin-icon">
+                                <i className="fab fa-linkedin"></i>
+                            </span>
+                        </a>
+                        <a href="https://angel.co/u/justin-chau-3" target="_blank" rel="noreferrer">
+                            <span className="linkedin-icon">
+                                <i className="fab fa-angellist"></i>
+                            </span>
+                        </a>
+                        <a href="https://jchau-623.github.io/" target="_blank" rel="noreferrer">
+                            <span className="github-icon">
+                                <div>Portfolio</div>
+                            </span>
+                        </a>
+                    </ul>
+                )}
             </div>
 
             {sessionUser && <div></div>}

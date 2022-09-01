@@ -57,3 +57,9 @@
 .upload-button {
     font-size: 25px;
 }
+
+.about-me-dropdown {
+    position: absolute;
+    list-style-type: none;
+    cursor: pointer;
+}

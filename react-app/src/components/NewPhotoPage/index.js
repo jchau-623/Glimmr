@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 const NewPhotoPage = () => {
     const fileInput = useRef(null);
     const dispatch = useDispatch();
-    const handleSimulateClick = () => { fileInput.current.click() }
+    // const handleSimulateClick = () => { fileInput.current.click() 
 
     const sessionUser = useSelector((state) => state.session.user);
     const [imageUrl, setImageUrl] = useState('');
@@ -35,7 +35,7 @@ const NewPhotoPage = () => {
 
     return (
         <div className="upload-container">
-            <div className="heading-container">
+            {/* <div className="heading-container">
                 <h3 className="upload-heading">You can upload photos here.</h3>
             </div>
             <div className="upload-body">
@@ -51,7 +51,7 @@ const NewPhotoPage = () => {
                     ref={fileInput}
                     style={{ display: 'none' }}
                 />
-            </div>
+            </div> */}
         </div>
     )
 }

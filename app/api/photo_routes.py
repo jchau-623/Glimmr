@@ -73,7 +73,7 @@ def patch_photo(photo_id):
             album = Album.query.get(album_id)
             photo.albums.append(album)
 
-        # if data['album_id'] != 'None':  !!!!!!!! DAVID SHOWED ME
+        # if data['album_id'] != 'None':  !!!!!!!!  DAVID SHOWED ME
         #     photo.album_id = data['album_id']
         # photo.album_id = data['album_id']
 

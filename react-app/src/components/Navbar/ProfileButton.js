@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useSelector} from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import LogoutButton from '../auth/LogoutButton';
 import './ProfileButton.css';
 
@@ -8,19 +8,25 @@ function ProfileButton() {
     const sessionUser = useSelector((state) => state.session.user);
     const [showDropdown, setShowDropdown] = useState(false)
 
-    const handleClick = (e) => {
-        e.preventDefault()
-        setShowDropdown(!showDropdown);
-        // this toggles it true/false. you only set it to true, which is why it never becomes false again
-    };
+    useEffect(() => {
+        if (!showDropdown) return
+        const handleClick = (e) => {
+            e.preventDefault()
+            setShowDropdown(!showDropdown);
+            // this toggles it true/false. you only set it to true, which is why it never becomes false again
+        }
+        document.addEventListener('click', handleClick);
+
+        return () => document.removeEventListener('click', handleClick);
+    }, [showDropdown]);
 
     return (
         <div className='profile-div'>
             <div className='hamburger-icon'>
                 <i className="fa-solid fa-bars"
-                    onClick={handleClick}></i>
+                    onClick={setShowDropdown}></i>
                 <i className="fa-solid fa-user"
-                    onClick={handleClick}></i>
+                    onClick={setShowDropdown}></i>
             </div>
             {showDropdown &&
                 <ul className='profile-dropdown'>Hello, {sessionUser.first_name} {sessionUser.last_name}!
