@@ -1,77 +1,9 @@
-import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getPhotos } from "../../store/photo";
 import "./ExplorePage.css";
-import { useLocation } from "react-router-dom";
 
-
-const ExplorePage = (props) => {
-    const [isActive, setIsActive] = useState(false);
-
-    const allPhotosObj = useSelector(store => store?.photo?.photos);
-    let otherUsersPhotos;
-    if (allPhotosObj) {
-        const allPhotosArr = Object?.values(allPhotosObj);
-        otherUsersPhotos = allPhotosArr?.filter(
-            photo => photo?.user_id !== props?.sessionUser?.id
-        );
-    }
-
-    if(isActive) {
-
-    }
-
-    otherUsersPhotos?.reverse();
-
-    const dispatch = useDispatch();
-
-    const exploreLocation = useLocation()
-
-    useEffect(() => {
-        dispatch(getPhotos());
-    }, [dispatch]);
-
-    const onMouseEnter = e => {
-        e.preventDefault();
-        setIsActive(true);
-    };
-
-    const onMouseLeave = e => {
-        e.preventDefault();
-        setIsActive(false);
-    };
+const ExplorePage = () => {
     return (
-        <div id="explore-page">
-            <div id="inner-explore-page">
-                {otherUsersPhotos?.map(photo => (
-                    <NavLink to={`/photos/${photo.id}`} key={photo.id} onClick={props.changeLocation(exploreLocation)}>
-                        <div id="explore-individual-photo-container">
-                            <div id="explore-gradient"></div>
-                            <img
-                                src={photo.image_url}
-                                onError={e => (
-                                    (e.target.onerror = null)
-                                )}
-                                className="individual-photo"
-                                onMouseEnter={onMouseEnter}
-                                onMouseLeave={onMouseLeave}
-                                alt='explore individual'
-                            />
-                            <div id="explore-text">
-                                <p>{photo.title}</p>
-                                <p>
-                                    {photo?.user_id === props?.sessionUser?.id
-                                        ? "by YOU!"
-                                        : `by ${photo?.user?.username}`}
-                                </p>
-                            </div>
-                        </div>
-                    </NavLink>
-                ))}
-            </div>
-        </div>
-    );
+        <h1>Explore Page</h1>
+    )
 }
 
 

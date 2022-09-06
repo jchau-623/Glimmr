@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import NewPhotoPage from './components/NewPhotoPage';
 import PhotostreamPage from './components/PhotostreamPage';
 import ExplorePage from './components/ExplorePage';
+import HomePage from './components/HomePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -46,7 +47,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
+          <HomePage />
         </ProtectedRoute>
         <ProtectedRoute path="/photostream" exact={true}>
           <PhotostreamPage/>
