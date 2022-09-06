@@ -5,11 +5,19 @@ from app.models import db, User
 def seed_users():
     demo = User(
         first_name='Demo', last_name='User', email='demo@aa.io', password='password')
+    marnie = User(
+        first_name='Marnie', last_name='Smith', email='marnie@aa.io', password='password')
+    bobbie = User(
+        first_name='Bobbie', last_name='Smith', email='bobbie@aa.io', password='password')
+    john = User(
+       first_name='John', last_name='Smith', email='john@aa.io', password='password')
 
     db.session.add(demo)
+    db.session.add(marnie)
+    db.session.add(bobbie)
+    db.session.add(john)
 
     db.session.commit()
-
 
 # Uses a raw SQL query to TRUNCATE the users table.
 # SQLAlchemy doesn't have a built in function to do this
