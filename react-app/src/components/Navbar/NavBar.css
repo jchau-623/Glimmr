@@ -3,8 +3,7 @@
     flex-direction: row;
     background-color: rgb(22,22,24);
     color: white;
-    height: 60px;
-    align-items: center;
+    height: 50px;
 }
 
 .navbar a:hover {
@@ -12,26 +11,17 @@
 }
 
 .navbar-left {
-    margin-left: 230px;
+    margin-left: 150px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: left;
-}
-
-.navbar-center {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 300px;
 }
 
 .navbar-right {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: right;
-    margin-left: 310px;
+    margin-left:750px;
 }
 
 .flickr-dots {
@@ -51,6 +41,7 @@
 
 .nav-items {
     margin: 0 25px;
+    padding:10px;
     font-size: 16px;
 }
 
@@ -59,7 +50,63 @@
 }
 
 .about-me-dropdown {
-    position: absolute;
+    display:flex;
     list-style-type: none;
     cursor: pointer;
+    margin-left: 20px;
+}
+
+.about-me-items {
+    position: absolute;
+    left:567px;
+    top:45px;
+    background-color:white;
+    border-radius: 4px;
+    width:180px;
+    box-shadow: 2px 2px 10px #161712;
+}
+.about-me-items a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid #dadce0;
+    padding:5px;
+}
+
+.about-me-items i {
+    color:black;
+    margin-right:10px;
+}
+
+.about-me-icon {
+    padding-left:10px;
+}
+
+.fa-github {
+    padding-left:5px;
+}
+
+.fa-linkedin  {
+    padding-left:5px;
+}
+
+.fa-angellist {
+    padding-left:5px;
+}
+
+.about-me-items span {
+    color:black;
+}
+
+.about-me-items span:hover {
+    color: lightgray;
+}
+
+.about-me-items div {
+    color:black;
+}
+
+.about-me-items div:hover {
+    color: lightgray;
 }

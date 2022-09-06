@@ -56,41 +56,11 @@ const NavBar = () => {
                         </div>
                     </>
                 )}
-            </div>
-
-            {/* <div className="navbar-center">
-                <div className="nav-items">
-                    <a href="https://github.com/jchau-623" target="_blank" rel="noreferrer">
-                        <span className="github-icon">
-                            <i className="fab fa-github"></i>
-                        </span>
-                    </a>
-                </div>
-                <div className="nav-items">
-                    <a
-                        href="https://www.linkedin.com/in/justin-chau-1123a9142/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <span className="linkedin-icon">
-                            <i className="fab fa-linkedin"></i>
-                        </span>
-                    </a>
-                </div>
-                <div className="nav-items">
-                    <a href="https://angel.co/u/justin-chau-3" target="_blank" rel="noreferrer">
-                        <span className="linkedin-icon">
-                            <i className="fab fa-angellist"></i>
-                        </span>
-                    </a>
-                </div>
-            </div> */}
-            <div className="navbar-center">
                 <div className='about-me-dropdown' onClick={setShowAboutMe}>About Me</div>
                 {showAboutMe && (
-                    <ul className="nav-items">
+                    <ul className="about-me-items">
                         <a href="https://github.com/jchau-623" target="_blank" rel="noreferrer">
-                            <span className="github-icon">
+                            <span className="about-me-icon">GitHub
                                 <i className="fab fa-github"></i>
                             </span>
                         </a>
@@ -99,12 +69,12 @@ const NavBar = () => {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <span className="linkedin-icon">
+                            <span className="about-me-icon">LinkedIn
                                 <i className="fab fa-linkedin"></i>
                             </span>
                         </a>
                         <a href="https://angel.co/u/justin-chau-3" target="_blank" rel="noreferrer">
-                            <span className="linkedin-icon">
+                            <span className="about-me-icon">AngeList
                                 <i className="fab fa-angellist"></i>
                             </span>
                         </a>
