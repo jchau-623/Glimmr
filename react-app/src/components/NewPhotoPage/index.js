@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 const NewPhotoPage = () => {
     const fileInput = useRef(null);
     const dispatch = useDispatch();
-    // const handleSimulateClick = () => { fileInput.current.click() 
+    // const handleSimulateClick = () => { fileInput.current.click()
 
     const sessionUser = useSelector((state) => state.session.user);
     const [imageUrl, setImageUrl] = useState('');
@@ -16,7 +16,7 @@ const NewPhotoPage = () => {
     const [description, setDescription] = useState('')
     const [albums, setAlbums] = useState([]);
     const [errors, setErrors] = useState([]);
-
+    
 
     const handleUpload = async (e) => {
         e.preventDefault();
