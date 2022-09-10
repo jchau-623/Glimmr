@@ -16,7 +16,7 @@ const NavBar = () => {
         const closeDropdown = (e) => {
             setShowAboutMe(false);
         }
-        wad
+
         document.addEventListener('click', closeDropdown);
 
         return () => document.removeEventListener('click', closeDropdown);
