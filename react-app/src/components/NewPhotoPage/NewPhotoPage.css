@@ -3,13 +3,29 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 10%;
+    padding-top: 10%;
+}
+.upload-page {
+    background-color: #333333;
+   height:100%;
 }
 
-.upload-heading {
+.upload-heading-1 {
     display:flex;
     justify-content: center;
     align-items: center;
+    color:white;
+    border: 2px solid #ff0084;
+    padding:20px;
+    font-size:22px;
+}
+
+.upload-heading-2 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-size:18px;
 }
 
 .fa-up-from-line {

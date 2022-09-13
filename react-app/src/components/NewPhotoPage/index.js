@@ -32,9 +32,10 @@ export default function NewPhotoPage() {
     }
     const handleSimulateClick = () => { fileInput.current.click() }
     return (
+        <div className='upload-page'>
         <div className="upload-container">
             <div className="heading-container">
-                <h3 className="upload-heading">You can upload photos by clicking here</h3>
+                <h3 className="upload-heading-1">You can upload photos by clicking below</h3>
             </div>
             <div className="upload-body">
                 <div className="upload-icon-container"
@@ -42,7 +43,7 @@ export default function NewPhotoPage() {
                 >
                     <i className="fa-solid fa-up-from-line"></i>
                 </div>
-                <h3 className="upload-heading">
+                <h3 className="upload-heading-2">
                 or
                 </h3>
                 <button
@@ -58,6 +59,7 @@ export default function NewPhotoPage() {
                     style={{ display: 'none' }}
                 />
             </div>
+        </div>
         </div>
     )
 }
