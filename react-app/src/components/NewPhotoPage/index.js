@@ -38,14 +38,14 @@ export default function NewPhotoPage() {
                 <h3 className="upload-heading-1">You can upload photos by clicking below</h3>
             </div>
             <div className="upload-body">
-                <div className="upload-icon-container"
+                {/* <div className="upload-icon-container"
                     onClick={handleSimulateClick}
                 >
                     <i className="fa-solid fa-up-from-line"></i>
                 </div>
                 <h3 className="upload-heading-2">
                 or
-                </h3>
+                </h3> */}
                 <button
                     className="choose-file-btn"
                     onClick={handleSimulateClick}
