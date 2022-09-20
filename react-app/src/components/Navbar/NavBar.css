@@ -100,7 +100,7 @@
 }
 
 .about-me-items span:hover {
-    color: lightgray;
+    font-weight:bold;
 }
 
 .about-me-items div {
@@ -108,5 +108,5 @@
 }
 
 .about-me-items div:hover {
-    color: lightgray;
+    font-weight:bold;
 }
