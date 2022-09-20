@@ -1,56 +1,110 @@
 
 import './NewPhotoPage.css'
-import { useState, useEffect, useRef } from "react";
-import { Redirect } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Redirect, useHistory } from "react-router-dom";
 import { postPhoto } from "../../store/photo";
+import { getAlbums } from "../../store/album";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from 'react-router-dom';
-import Dropzone from 'react-dropzone';
 
 export default function NewPhotoPage() {
-    const fileInput = useRef(null);
+    const history = useHistory();
+    // const fileInput = useRef(null);
     const dispatch = useDispatch();
-
     const sessionUser = useSelector((state) => state.session.user);
-    const [image, setImage] = useState(null);
+
     const [imageUrl, setImageUrl] = useState('');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('')
-    const [albums, setAlbums] = useState([]);
     const [errors, setErrors] = useState([]);
-    const [disableSubmit, setDisableSubmit] = useState(false);
-    const [fileError, setFileError] = useState(false);
-    const [showTextForm, setShowTextForm] = useState(false);
 
-    const [showModal, setShowModal] = useState(false);
-    const closeModal = () => setShowModal(false);
+    useEffect(() => {
+        dispatch(getAlbums());
+    }, [dispatch]);
 
-    const location = useLocation()
-
-
-    const handleSubmit = async (e) => {
-        if (disableSubmit) return
-        setDisableSubmit(true);
-
+    const onSubmit = async (e) => {
+        e.preventDefault();
         const photo = {
             image_url: imageUrl,
             title,
             description,
-            album_ids: albums
         }
-        await dispatch(postPhoto(photo))
-            .then((res) => location.pathname.includes(sessionUser.username))
-        closeModal()
-    };
+
+        const data = await dispatch(postPhoto(photo));
+
+        if (data) setErrors(data);
+        if (!data) history.push("/photostream");
     }
 
+    const formatError = error => {
+        const startIndex = error.indexOf(":") + 1;
+        return error.slice(startIndex);
+    };
+
+    if (!sessionUser) return <Redirect to="/login" />;
+
+    // const handleSimulateClick = () => { fileInput.current.click() }
     return (
-        <div className='upload-page'>
+        <div className='upload-page'
+        >
             <div className="upload-container">
                 <div className="heading-container">
-                    <h3 className="upload-heading-1">You can upload photos by clicking below</h3>
+                    <h3 className="upload-heading-1">You can upload photos by completing the form below</h3>
                 </div>
                 <div className="upload-body">
+                    <form onSubmit={onSubmit} className="photo-form">
+                        <ul className="create-form-errors">
+                            {errors.map(error => (
+                                <li key={error}>{formatError(error)}</li>
+                            ))}
+                        </ul>
+                        <div className="form-label-input">
+                            <label className='image-url' htmlFor="imageUrl">Image URL</label>
+                            <input
+                                className="signup-login-fields"
+                                type="text"
+                                name="imageUrl"
+                                value={imageUrl}
+                                onChange={e => setImageUrl(e.target.value)}
+                            />
+                        </div>
+                        <div className="form-label-input">
+                            <label htmlFor="title">Photo Title</label>
+                            <input
+                                className="signup-login-fields"
+                                type="text"
+                                name="title"
+                                value={title}
+                                onChange={e => setTitle(e.target.value)}
+                            />
+                        </div>
+                        <div className="form-label-input">
+                            <label htmlFor="description">
+                                Description (Optional)
+                            </label>
+                            <textarea
+                                className="signup-login-fields"
+                                name="description"
+                                value={description}
+                                onChange={e => setDescription(e.target.value)}
+                                rows="20"
+                                cols="80"
+                            />
+                        </div>
+                        <div className="create-form-buttons-container">
+                            <div
+                                onClick={onSubmit}
+                                className="create-form-login-button"
+                            >
+                                Create
+                            </div>
+                            <div
+                                className="create-form-login-button"
+                                onClick={() => history.push("/photostream")}
+                            >
+                                Cancel
+                            </div>
+                        </div>
+                    </form>
                     {/* <div className="upload-icon-container"
                     onClick={handleSimulateClick}
                 >
@@ -59,18 +113,18 @@ export default function NewPhotoPage() {
                 <h3 className="upload-heading-2">
                 or
                 </h3> */}
-                    <button
-                        className="choose-file-btn"
-                        onClick={handleSimulateClick}
-                    >
-                        Choose photos to upload
-                    </button>
-                    <input
-                        type='file'
-                        onChange={handleSubmit}
-                        ref={fileInput}
-                        style={{ display: 'none' }}
-                    />
+                    {/* <button
+                    className="choose-file-btn"
+                    onClick={handleSimulateClick}
+                >
+                    Choose photos to upload
+                </button>
+                <input
+                    type='file'
+                    onChange={onSubmit}
+                    ref={fileInput}
+                    style={{ display: 'none' }}
+                /> */}
                 </div>
             </div>
         </div>

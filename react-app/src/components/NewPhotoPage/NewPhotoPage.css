@@ -1,48 +1,114 @@
 .upload-container {
-    display:flex;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     padding-top: 10%;
+
 }
+
 .upload-page {
     background-color: #333333;
-   height:100%;
+    background-size: cover;
+    height: 93.2vh;
 }
 
 .upload-heading-1 {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    color:white;
+    color: white;
     border: 2px solid #ff0084;
-    padding:20px;
-    font-size:22px;
+    padding: 20px;
+    font-size: 22px;
+    margin-bottom: 20px;
 }
 
-.upload-heading-2 {
+.upload-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    width: 366px;
+}
+
+.form-label-input {
+    color: white;
+}
+
+.signup-login-fields {
+    display: flex;
+    border: 1px solid #dadce0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 54px;
+    width: 300px;
+    padding: 13px 15px;
+    font-size: 16px;
+
+}
+
+.create-form-buttons-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.create-form-login-button {
+    display: flex;
+    width: 300px;
+    height: 40px;
+    background-color: #0063dc;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+    color: #fff;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.create-form-errors {
+    padding-top:60px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #cc4539;
+    margin: 10px;
+}
+
+/* .upload-heading-2 {
     display:flex;
     justify-content: center;
     align-items: center;
     color:white;
     font-size:18px;
-}
+} */
 
-.fa-up-from-line {
+/* .fa-up-from-line {
     font-size: 55px;
     color:gray;
     border-radius: 68px;
     margin-top: 35px;
-}
+} */
 
-.upload-body {
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
 
-.upload-icon-container {
+/* .upload-icon-container {
     width:125px;
     height:125px;
     object-fit: cover;
@@ -53,9 +119,9 @@
     margin-bottom: 30px;
     margin-top: 30px;
     cursor: pointer;
-}
+} */
 
-.choose-file-btn {
+/* .choose-file-btn {
     background-color: #0063dc;
     color:white;
     border:none;
@@ -65,4 +131,4 @@
     border-radius: 5px;
     font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-top: 20px;
-}
+} */
