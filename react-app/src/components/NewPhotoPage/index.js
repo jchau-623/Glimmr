@@ -129,5 +129,6 @@ export default function NewPhotoPage() {
             </div>
         </div>
     )
-    
+
 }
+    
