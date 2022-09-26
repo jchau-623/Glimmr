@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-const PhotostreamPage = () => {
+const PhotostreamPage = (props) => {
     const allPhotosObj = useSelector(store => store?.photo?.photos);
     let sessionUserPhotos;
     if (allPhotosObj) {
